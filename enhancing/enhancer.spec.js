@@ -1,5 +1,5 @@
 const enhancer = require('./enhancer.js');
-const {repair, succeed, fail} = require('./enhancer.js')
+const {repair, succeed, fail, get} = require('./enhancer.js')
 // test away!
 
 describe('enhancer.js', () => {
@@ -37,4 +37,18 @@ describe('enhancer.js', () => {
             expect(fail({enhancement: 18, durability: 75 }).enhancement).toBe(17)
         })
     })
+
+    describe('get()', () => {
+        it('create a name', () => {
+            // const item = {
+            //     enhancement: 16,
+            //     durability: 75
+            // }
+            expect(get({enhancement: 12, name: 'Spirit Blade' }).name).toBe('[+12] Spirit Blade')
+            expect(get({enhancement: 0, name: 'Spirit Blade' }).name).toBe('Spirit Blade')
+            
+        })
+    })
+
+    
 })

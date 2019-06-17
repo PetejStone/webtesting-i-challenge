@@ -30,5 +30,9 @@ function repair(item) {
 }
 
 function get(item) {
-  return { ...item };
+  if (item.enhancement > 0 ) {
+    return { ...item, name: `[+${item.enhancement}] Spirit Blade` };
+  } else {
+    return {...item, name: 'Spirit Blade'}
+  }
 }
