@@ -39,7 +39,7 @@ describe('enhancer.js', () => {
     })
 
     describe('get()', () => {
-        it('create a name', () => {
+        it('create a name with enhancement inside brackets if > 0', () => {
             // const item = {
             //     enhancement: 16,
             //     durability: 75
