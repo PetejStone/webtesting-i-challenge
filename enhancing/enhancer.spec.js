@@ -34,6 +34,7 @@ describe('enhancer.js', () => {
             // }
             expect(fail({enhancement: 14, durability: 75 }).durability).toBe(75-5)
             expect(fail({enhancement: 17, durability: 75 }).durability).toBe(75-10)
+            expect(fail({enhancement: 18, durability: 75 }).enhancement).toBe(17)
         })
     })
 })
