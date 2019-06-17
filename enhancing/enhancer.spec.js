@@ -1,5 +1,5 @@
 const enhancer = require('./enhancer.js');
-const {repair, succeed} = require('./enhancer.js')
+const {repair, succeed, fail} = require('./enhancer.js')
 // test away!
 
 describe('enhancer.js', () => {
@@ -28,12 +28,12 @@ describe('enhancer.js', () => {
 
     describe('fail()', () => {
         it('should -5 from durability if enhancement < 15, or -10 if > 15. AND -1 from enhancement if enhancement > 16', () => {
-            const item = {
-                enhancement: 16,
-                durability: 75
-            }
-            expect(enhancer.fail(item).durability).toBe(75 - 5)
-           expect(enhancer.fail(item).durability).toBe(75 - 10)
+            // const item = {
+            //     enhancement: 16,
+            //     durability: 75
+            // }
+            expect(fail({enhancement: 14, durability: 75 }).durability).toBe(75-5)
+            expect(fail({enhancement: 17, durability: 75 }).durability).toBe(75-10)
         })
     })
 })
